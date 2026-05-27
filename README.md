@@ -1,125 +1,69 @@
-# Chatbot UI
+# Prompt Tester for OpenAI Text APIs
 
-Chatbot UI is an advanced chatbot kit for OpenAI's chat models built on top of [Chatbot UI Lite](https://github.com/mckaywrigley/chatbot-ui-lite) using Next.js, TypeScript, and Tailwind CSS.
+A Next.js prompt testing workspace for OpenAI chat conversations, prompts, folders, imports, exports, and model settings.
 
-See a [demo](https://twitter.com/mckaywrigley/status/1640380021423603713?s=46&t=AowqkodyK6B4JccSOxSPew).
+Live: [https://prompt-tester-for-open-ai-text-api-s.vercel.app](https://prompt-tester-for-open-ai-text-api-s.vercel.app)
 
-![Chatbot UI](./public/screenshot.png)
+## Mission
 
-## Updates
+Prompt testing should be quick, local, and inspectable. This fork keeps a practical UI for saving conversations, managing prompt templates, trying model settings, and exporting work while preserving the MIT-licensed Chatbot UI foundation.
 
-Chatbot UI will be updated over time.
+## What This Repository Contains
 
-Expect frequent improvements.
+Next.js 13 chatbot interface built from Chatbot UI, with OpenAI model calls, conversation and prompt sidebars, folders, import/export, i18n, markdown rendering, syntax highlighting, Docker, tests, and deployment examples.
 
-**Next up:**
+## Highlights
 
-- [ ] Delete messages
-- [ ] More model settings
-- [ ] Plugins
+- Chat with OpenAI text/chat models.
+- Store and search conversations, prompts, and folders in the browser.
+- Import and export prompt testing data.
+- Render markdown, math, and code blocks across multiple locales.
 
-**Recent updates:**
+## Tech Stack
 
-- [x] Prompt templates (3/27/23)
-- [x] Regenerate & edit responses (3/25/23)
-- [x] Folders (3/24/23)
-- [x] Search chat content (3/23/23)
-- [x] Stop message generation (3/22/23)
-- [x] Import/Export chats (3/22/23)
-- [x] Custom system prompt (3/21/23)
-- [x] Error handling (3/20/23)
-- [x] GPT-4 support (access required) (3/20/23)
-- [x] Search conversations (3/19/23)
-- [x] Code syntax highlighting (3/18/23)
-- [x] Toggle sidebar (3/18/23)
-- [x] Conversation naming (3/18/23)
-- [x] Github flavored markdown (3/18/23)
-- [x] Add OpenAI API key in app (3/18/23)
-- [x] Markdown support (3/17/23)
+- Next.js 13 and React 18
+- TypeScript
+- Tailwind CSS
+- OpenAI SDK
+- next-i18next
+- Vitest
+- Docker and Kubernetes manifests
 
-## Modifications
-
-Modify the chat interface in `components/Chat`.
-
-Modify the sidebar interface in `components/Sidebar`.
-
-Modify the system prompt in `utils/index.ts`.
-
-## Deploy
-
-**Vercel**
-
-Host your own live version of Chatbot UI with Vercel.
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmckaywrigley%2Fchatbot-ui)
-
-**Replit**
-
-Fork Chatbot UI on Replit [here](https://replit.com/@MckayWrigley/chatbot-ui-pro?v=1).
-
-**Docker**
-
-Build locally:
-
-```shell
-docker build -t chatgpt-ui .
-docker run -e OPENAI_API_KEY=xxxxxxxx -p 3000:3000 chatgpt-ui
-```
-
-Pull from ghcr:
-
-```
-docker run -e OPENAI_API_KEY=xxxxxxxx -p 3000:3000 ghcr.io/mckaywrigley/chatbot-ui:main
-```
-
-## Running Locally
-
-**1. Clone Repo**
+## Getting Started
 
 ```bash
-git clone https://github.com/mckaywrigley/chatbot-ui.git
-```
-
-**2. Install Dependencies**
-
-```bash
-npm i
-```
-
-**3. Provide OpenAI API Key**
-
-Create a .env.local file in the root of the repo with your OpenAI API Key:
-
-```bash
-OPENAI_API_KEY=YOUR_KEY
-```
-
-> You can set `OPENAI_API_HOST` where access to the official OpenAI host is restricted or unavailable, allowing users to configure an alternative host for their specific needs.
-
-> Additionally, if you have multiple OpenAI Organizations, you can set `OPENAI_ORGANIZATION` to specify one.
-
-**4. Run App**
-
-```bash
+npm install
+cp .env.local.example .env.local
 npm run dev
 ```
 
-**5. Use It**
+## Quality Checks
 
-You should be able to start chatting.
+```bash
+npm run lint
+npm run test
+npm run build
+```
 
-## Configuration
+## Repository Notes
 
-When deploying the application, the following environment variables can be set:
+- This project is based on MIT-licensed Chatbot UI by Mckay Wrigley; preserve original copyright notices.
+- Keep OpenAI API keys in .env.local or deployment secrets only.
 
-| Environment Variable | Default value   | Description                                             |
-| -------------------- | --------------- | ------------------------------------------------------- |
-| OPENAI_API_KEY       |                 | The default API key used for authentication with OpenAI |
-| DEFAULT_MODEL        | `gpt-3.5-turbo` | The default model to use on new conversations           |
+## Contributing
 
-If you do not provide an OpenAI API key with `OPENAI_API_KEY`, users will have to provide their own key.
-If you don't have an OpenAI API key, you can get one [here](https://platform.openai.com/account/api-keys).
+Contributions are welcome. The best contributions are specific, tested, and grounded in the product mission. Good places to help include documentation, accessibility, tests, bug reports, UI polish, data validation, and safer AI behavior.
 
-## Contact
+Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
 
-If you have any questions, feel free to reach out to me on [Twitter](https://twitter.com/mckaywrigley).
+## Security
+
+Please do not open public issues for secrets, auth bypasses, data exposure, provider key leaks, or abuse vectors. Follow [SECURITY.md](SECURITY.md).
+
+## Code of Conduct
+
+This project follows [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). Be direct, kind, and useful.
+
+## License
+
+MIT. See [LICENSE](LICENSE).

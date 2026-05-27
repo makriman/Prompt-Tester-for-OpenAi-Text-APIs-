@@ -1,41 +1,59 @@
-# Contributing Guidelines
-**Welcome to Chatbot UI!**
+# Contributing to Prompt Tester for OpenAI Text APIs
 
-We appreciate your interest in contributing to our project.
+Thank you for wanting to help.
 
-Before you get started, please read our guidelines for contributing.
+This project exists because useful software gets better when people can understand it, run it, question it, and improve it. Contributions are welcome from engineers, designers, educators, operators, writers, testers, and curious users.
 
-## Types of Contributions
-We welcome the following types of contributions:
+## How to Contribute
 
-- Bug fixes
-- New features
-- Documentation improvements
-- Code optimizations
-- Translations
-- Tests
+1. Open an issue for bugs, ideas, accessibility problems, documentation gaps, or confusing behavior.
+2. Keep pull requests focused and easy to review.
+3. Include screenshots or short recordings for UI changes.
+4. Include reproduction steps for bugs.
+5. Run the checks before asking for review.
 
+## Local Setup
 
-## Getting Started
-To get started, fork the project on GitHub and clone it locally on your machine. Then, create a new branch to work on your changes.
-
-```
-git clone https://github.com/mckaywrigley/chatbot-ui.git
-cd chatbot-ui
-git checkout -b my-branch-name
-
+```bash
+npm install
+cp .env.local.example .env.local
+npm run dev
 ```
 
-Before submitting your pull request, please make sure your changes pass our automated tests and adhere to our code style guidelines.
+## Checks
 
-## Pull Request Process
-1. Fork the project on GitHub.
-2. Clone your forked repository locally on your machine.
-3. Create a new branch from the main branch.
-4. Make your changes on the new branch.
-5. Ensure that your changes adhere to our code style guidelines and pass our automated tests.
-6. Commit your changes and push them to your forked repository.
-7. Submit a pull request to the main branch of the main repository.
+```bash
+npm run lint
+npm run test
+npm run build
+```
 
-## Contact
-If you have any questions or need help getting started, feel free to reach out to me on [Twitter](https://twitter.com/mckaywrigley).
+## Pull Request Expectations
+
+Please include:
+
+- What changed.
+- Why it changed.
+- How it was tested.
+- Screenshots for visual changes.
+- Any migration, environment, deployment, or data notes.
+
+## Areas That Need Care
+
+- Product clarity: make the experience easier to understand.
+- Accessibility: keyboard navigation, semantic markup, contrast, and screen reader support.
+- Reliability: tests, validation, error states, and deployment hygiene.
+- Security: keep secrets server-side and avoid logging private user data.
+- Documentation: help the next contributor build context quickly.
+
+## Code Style
+
+- Prefer the patterns already used in the repository.
+- Keep changes scoped.
+- Avoid new dependencies unless they remove real complexity.
+- Add comments only where they explain non-obvious behavior.
+- Never commit real secrets, production data, provider keys, or private user content.
+
+## Community
+
+Be generous with context. Assume people are here because they care about making the project better.
